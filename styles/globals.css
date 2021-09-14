@@ -3,11 +3,13 @@
 /* base styles */
 :root {
   --primary: #166ae8;
+  /* CSS VARIABLES */
 }
 body {
   padding: 0;
   margin: 0 20px;
   font-family: 'Quicksand', sans-serif;
+  /* font-family: Comic Sans Ms; */
   color: rgb(255, 255, 255);
   background: #1d0d0d;
 }
@@ -50,6 +52,9 @@ nav li.btn:hover {
   color: white;
   background: var(--primary);
 }
+nav li a:hover{
+  color: rgb(188, 167, 253);
+}
 
 /* banner */
 .banner{
@@ -71,5 +76,5 @@ nav li.btn:hover {
   border-top: .9px solid rgb(168 179 207 / 20%);
 }
 .footer a {
-  color: #39e58c;
+  color: rgb(188, 167, 253);
 }

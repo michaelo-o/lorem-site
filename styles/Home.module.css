@@ -4,3 +4,9 @@
   letter-spacing: 1px;
   line-height: 1.6em;
 }
+.headers{
+  color: rgb(188, 167, 253);
+}
+.welcome{
+  text-align: center;
+}
