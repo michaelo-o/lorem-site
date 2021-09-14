@@ -16,9 +16,11 @@ export const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         // to change the value of user and change it by listeneing for a login event so we know we are logged in
-        netlifyIdentity.on('login', (user)  => {
+        netlifyIdentity.on('login', (user) => {
             setUser(user)
-        } ) //listens for anyuser signing up or logging in and provides us with the user when they do
+            netlifyIdentity.close()
+            console.log('login event')
+        }) //listens for anyuser signing up or logging in and provides us with the user when they do
 
 
 
