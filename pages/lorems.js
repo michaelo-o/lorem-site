@@ -9,6 +9,7 @@ export default function Guides() {
     </Head>
       <div className={styles.lorems}>
         <h2>All Lorem Ipsums</h2>
+
       </div>
 
     </>
