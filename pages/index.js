@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Head>
         <title>Home Of Lorem Ipsum</title>
       </Head>
@@ -30,6 +30,6 @@ export default function Home() {
           <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs.</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }

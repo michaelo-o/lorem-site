@@ -1,5 +1,6 @@
 import styles from '../styles/Lorems.module.css'
 import Head from 'next/dist/next-server/lib/head'
+import DummyComp from '../components/DummyComp'
 
 export default function Guides() {
   return (
@@ -9,6 +10,7 @@ export default function Guides() {
     </Head>
       <div className={styles.lorems}>
         <h2>All Lorem Ipsums</h2>
+        <p><DummyComp /></p>
 
       </div>
 
