@@ -16,7 +16,7 @@ export default function Navbar() {
       </Head>
       <nav className="navbar">
         <div className="logo-sitename">
-          <Image src="/logo-favicon.png" width={85} height={75} />
+          <Image src="/logo-favicon.png" width={60} height={40} />
           <Link href="/"><a><h1>Home Of Lorem Ipsum</h1></a></Link>
         </div>
           <div className="links">
