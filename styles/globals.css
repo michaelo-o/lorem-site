@@ -2,7 +2,8 @@
 
 /* base styles */
 :root {
-  --primary: #166ae8;
+  --thepurple: rgb(188, 167, 253);
+  --thebrown: #1d0d0d;
   /* CSS VARIABLES */
 }
 body {
@@ -11,7 +12,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   /* font-family: Comic Sans Ms; */
   color: rgb(255, 255, 255);
-  background: #1d0d0d;
+  background: var(--thebrown);
 }
 a {
   color: inherit;
@@ -45,31 +46,22 @@ a {
  nav h1 {
   margin-left: 10px;
 }
-/*
-nav ul {
-  margin-left: auto;
-  list-style-type: none;
-  padding: 0;
-}
-nav li {
-  display: inline-block;
-  margin-left: 16px;
-} */
 
 .links .btn {
   padding: 10px 16px;
-  border: 2px solid rgb(188, 167, 253);
+  border: 2px solid var(--thepurple);
   border-radius: 15px;
   font-weight: 600;
-  color: rgb(188, 167, 253);
+  color: var(--thepurple);
   cursor: pointer;
+  text-align: center;
 }
 .links .btn:hover {
   color: white;
-  background-color: rgb(188, 167, 253);
+  background-color: var(--thepurple);
 }
 .links p:hover{
-  color: rgb(188, 167, 253);
+  color: var(--thepurple);
 }
 
 
@@ -93,13 +85,13 @@ nav li {
   border-top: .9px solid rgb(168 179 207 / 20%);
 }
 .footer a {
-  color: rgb(188, 167, 253);
+  color: var(--thepurple);
 }
 
 
 /* sticky */
 .sticky{
-  color: rgb(188, 167, 253);
+  color: var(--thepurple);
   position: sticky;
   top: 0;
   background-color: black;
@@ -107,6 +99,44 @@ nav li {
   height: fit-content;
   padding: 1%;
 }
+
+/* Profile Info */
+
+.profilemodal{
+  width: 25%;
+  position: absolute;
+  right: 2%;
+  z-index: +1;
+  margin: 2% auto;
+  margin-bottom: 0;
+  background-color: var(--thebrown);
+  border: 1px solid var(--thepurple);
+  box-shadow: 0px 0px 8px 0px  var(--thepurple);
+  padding: 15px;
+  overflow-x: hidden;
+  /* text-align: center; */
+}
+.profilemodal>p:hover {
+  color: white;
+}
+.textBeforeProfile:hover{
+  color: white !important; 
+}
+.profileName{
+  color: var(--thepurple) !important;
+  cursor: pointer;
+}
+.backbutton {
+  cursor: pointer;
+  padding: 6px 12px;
+  background-color: #3a434c;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+
+
 
 
 @media only screen and (max-width: 700px) {
@@ -139,4 +169,15 @@ nav li {
  nav h1 {
   margin-left: 10px;
 }
+.profilemodal{
+  text-align: center;
+  width: 80%;
+  margin: 1% 3.5%;
+  margin-bottom: 0;
+  background-color: var(--thebrown);
+  border: 1px solid var(--thepurple);
+  box-shadow: 0px 0px 8px 0px  var(--thepurple);
+  padding: 15px;
+  overflow-x: hidden;
+} 
 }

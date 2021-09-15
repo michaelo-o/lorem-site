@@ -1,6 +1,7 @@
 // //This file Keeps track of the authentication state of the user
 import { createContext, useState, useEffect } from 'react'
 import netlifyIdentity from 'netlify-identity-widget'
+import Navbar from '../components/Navbar'
 
 const AuthContext = createContext({
     user: null,
@@ -29,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
         })
 
         
-        // init netlify identity connection
+        // initialise? netlify identity connection
         netlifyIdentity.init()
 
 
