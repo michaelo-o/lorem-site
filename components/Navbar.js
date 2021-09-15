@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 
 export default function Navbar() {
-  const { user, login } = useContext(AuthContext)
+  const { user, login, logout } = useContext(AuthContext) //context from the autthContext file
   console.log(user)
 
   return (
@@ -16,14 +16,16 @@ export default function Navbar() {
       </Head>
       <nav className="navbar">
         <div className="logo-sitename">
-          <Image src="/logo-favicon.png" width={85} height={75} />
+          <Image src="/logo-favicon.png" width={60} height={38} />
           <Link href="/"><a><h1>Home Of Lorem Ipsum</h1></a></Link>
         </div>
-          <div className="links">
+        <div className="links">
           <p><Link href="/"><a>Home</a></Link></p>
           <p><Link href="/lorems"><a>Lorem Ipsums</a></Link></p>
           <p onClick={login} className="btn">Login/Signup</p>
-          </div>
+          <p onClick={logout} className="btn">Log Out</p>
+
+        </div>
       </nav>
 
     </div >

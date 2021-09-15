@@ -5,7 +5,8 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthContextProvider>
+    <AuthContextProvider> 
+      {/* Wrapping this with Auth context provider makes it easier to make context from auth context global */}
       <Navbar />
       <Component {...pageProps} />
       <Footer />
