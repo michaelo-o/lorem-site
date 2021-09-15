@@ -30,4 +30,4 @@ const DummyComp = () => {
     );
 }
 
-export default DummyComp;
+export default DummyComp
