@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 
 export default function Navbar() {
-  const { user, login, logout } = useContext(AuthContext) //context from the autthContext file
+  const { user, login, logout, authReady } = useContext(AuthContext) //context from the autthContext file
   console.log(user)
 
   const outside = useRef()
@@ -14,15 +14,16 @@ export default function Navbar() {
   const [openProfile, setOpenProfile] = useState(false);
 
 
-  const handleClick = e => {
-    if (outside.current.contains(e.target)) {
+  const handleClick = event => {
+    if (outside.current.contains(event.target)) {  //.current is a method that useRef uses
       return
     }
     setOpenProfile(false)
   }
 
   useEffect(() => {
-    const getClick = document.addEventListener('click', handleClick)
+    const getClick = document.addEventListener('click', handleClick) //this watches for when we click outside so it will know to run the handleClick function
+    //looks for a click event and calls handle click if we click it
 
     // return () => {
     //   getClick()
@@ -35,45 +36,52 @@ export default function Navbar() {
     setOpenProfile(!openProfile)
   }
 
-  function useButton() {
+  function closeProfile() {
     setOpenProfile(false)
   }
 
   return (
-    <div className="container">
+    <div className="container" ref={outside}>
       <Head>
         <link rel="icon" href="/logo-favicon.png" />
       </Head>
-      <nav className="navbar" ref={outside}>
-        <div className="logo-sitename">
+      <nav className="navbar">
+        <div className="logo-sitename" onClick={closeProfile}>
           <Image src="/logo-favicon.png" width={60} height={38} />
           <Link href="/"><a><h1>Home Of Lorem Ipsum</h1></a></Link>
         </div>
         <div className="links">
-          <p><Link href="/"><a>Home</a></Link></p>
-          <p><Link href="/lorems"><a>Lorem Ipsums</a></Link></p>
-          {!user && <p onClick={login} className="btn">Login/Signup</p>}
+          <p onClick={closeProfile}><Link href="/"><a>Home</a></Link></p>
+          <p onClick={closeProfile}><Link href="/lorems"><a>Lorem Ipsums</a></Link></p>
 
-          {user && <p className="textBeforeProfile">Logged in as <span onClick={profile} className="profileName">{user.user_metadata.full_name}</span></p>}
+          {authReady &&
+            <div className="links">
+              {!user && <p onClick={login} className="btn">Login/Signup</p>}
+
+              {user && <p className="textBeforeProfile">Logged in as <span onClick={profile} className="profileName">{user.user_metadata.full_name}</span></p>}
 
 
-          {user && openProfile ? (
-            <div>
-              <div className="profilemodal">
-                <button onClick={useButton} className="backbutton">
-                  Close
-                </button>
-                <h2>Profile Info</h2>
-                <p>Username: {user.user_metadata.full_name}</p>
-                <p>Email: {user.email}</p>
-                <p onClick={logout} className="btn">Log Out</p>
-              </div>
+              {user && openProfile ? (
+
+                <div className="profilemodal">
+                  <button onClick={closeProfile} className="backbutton">
+                    Close
+                  </button>
+                  <h2>Profile Info</h2>
+                  <p>Username: {user.user_metadata.full_name}</p>
+                  <p>Email: {user.email}</p>
+                  <p>Date Created: {user.created_at}</p>
+                  <p onClick={logout} className="btn">Log Out</p>
+                </div>
+
+              ) : null
+              }
+
+              {user && <p onClick={logout} className="btn">Log Out</p>}
             </div>
-          ) : null
+
+
           }
-
-
-          {user && <p onClick={logout} className="btn">Log Out</p>}
 
         </div>
       </nav>
@@ -83,7 +91,3 @@ export default function Navbar() {
 }
 
 
-
-
-
-// {user && <p onClick={profile}>Logged in as <p className="tooltip">{user.user_metadata.full_name} <p className="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></p></p>}

@@ -15,6 +15,9 @@ const AuthContext = createContext({
 export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 
+    const [authReady, setAuthReady] = useState(false)
+    //when refreshing the page, for a fraction of a second, it is unkown if we are logged in, this is to make it wait for the login/authentication status before displaying the login/logout button
+
     useEffect(() => {
         // to change the value of user and change it by listeneing for a login event so we know we are logged in
         netlifyIdentity.on('login', (user) => {
@@ -29,14 +32,19 @@ export const AuthContextProvider = ({ children }) => {
 
         })
 
-        
+        netlifyIdentity.on('init', (user) => { //event listener to listen for initialisation event and set Auth ready state to true if we are logged in
+            setUser(user)
+            setAuthReady(true)
+            console.log('init event')
+        })
+
         // initialise? netlify identity connection
         netlifyIdentity.init()
 
 
-//the return statement that makes sure that we dont have multiple event listners when the component is rendered to the DOM 
+        //the return statement that makes sure that we dont have multiple event listners when the component is rendered to the DOM 
 
-//must be the last thing in the useEffect so it happens at the end
+        //must be the last thing in the useEffect so it happens at the end
         return () => {
             netlifyIdentity.off('login')
             netlifyIdentity.off('logiut')
@@ -50,7 +58,11 @@ export const AuthContextProvider = ({ children }) => {
     const logout = () => {
         netlifyIdentity.logout() //when you click logout, log the user out immediately
     }
-    const context = { user, login, logout } //context to be acessed from all pages
+
+
+    const context = { user, login, logout, authReady } //context to be acessed from all pages
+
+
 
     return (
         <AuthContext.Provider value={context}>

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home Of Lorem Ipsum</title>
+        <title>Home Of Lorem Ipsum | By Micky</title>
       </Head>
       <div className="banner">
         <Image src="/lorem-ipsum-banner.jpg" width={1000} height={350} />

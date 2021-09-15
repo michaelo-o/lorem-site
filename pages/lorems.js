@@ -6,7 +6,7 @@ export default function Guides() {
   return (
     <>
     <Head>
-      <title>The Lorems</title>
+      <title>The Lorems | Home Of Lorem Ipsum By Micky</title>
     </Head>
       <div className={styles.lorems}>
         <h2>All Lorem Ipsums</h2>
