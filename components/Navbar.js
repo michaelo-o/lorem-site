@@ -63,15 +63,17 @@ export default function Navbar() {
 
               {user && openProfile ? (
 
-                <div className="profilemodal">
-                  <button onClick={closeProfile} className="backbutton">
-                    Close
-                  </button>
-                  <h2>Profile Info</h2>
-                  <p>Username: {user.user_metadata.full_name}</p>
-                  <p>Email: {user.email}</p>
-                  <p>Date Created: {user.created_at}</p>
-                  <p onClick={logout} className="btn">Log Out</p>
+                <div>
+                  <div className="profilemodal">
+                    <button onClick={closeProfile} className="backbutton">
+                      Close
+                    </button>
+                    <h2>Profile Info</h2>
+                    <p>Username: {user.user_metadata.full_name}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Date Created: {user.created_at}</p>
+                    <p onClick={logout} className="btn">Log Out</p>
+                  </div>
                 </div>
 
               ) : null
