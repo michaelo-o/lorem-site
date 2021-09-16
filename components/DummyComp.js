@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import Image from 'next/dist/client/image';
+
 const DummyComp = () => {
     return (
         <div>
@@ -5,9 +8,17 @@ const DummyComp = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien et ligula ullamcorper malesuada proin. Amet venenatis urna cursus eget. Phasellus egestas tellus rutrum tellus pellentesque. Et sollicitudin ac orci phasellus egestas tellus. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Lorem sed risus ultricies tristique. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Sit amet cursus sit amet dictum sit amet. Purus in mollis nunc sed. Purus ut faucibus pulvinar elementum integer.</p>
 
             <p> Tincidunt praesent semper feugiat nibh sed pulvinar proin. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Maecenas pharetra convallis posuere morbi leo urna molestie. Amet mattis vulputate enim nulla aliquet porttitor. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Nisl nunc mi ipsum faucibus. Volutpat sed cras ornare arcu dui vivamus. Turpis egestas integer eget aliquet nibh praesent.</p>
-            <div className="sticky">
-                <p>Since i got you all these cool lorem ipsums, you'd buy me a coffee right? 🙂☕ </p>
-            </div>
+
+
+            <Link href="https://ko-fi.com/michae_l">
+                <a target="_blank">
+                    <div className="sticky">
+                        <p>Since i got you all these cool lorem ipsums, you'd buy me a coffee right? 🙂☕ <Image src="/coffee.png" width={20} height={20} /></p>
+                    </div>
+                </a>
+            </Link>
+
+
             <p>Sed id semper risus in hendrerit. Sit amet nisl purus in mollis nunc sed id semper. Eu tincidunt tortor aliquam nulla. Nisl purus in mollis nunc sed id. Elementum integer enim neque volutpat ac. Aliquam malesuada bibendum arcu vitae elementum. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Aenean et tortor at risus viverra adipiscing at in tellus. At urna condimentum mattis pellentesque id nibh tortor. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Diam sit amet nisl suscipit adipiscing bibendum.</p>
 
             <p>Id consectetur purus ut faucibus. Blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada. Sollicitudin nibh sit amet commodo nulla. Risus nullam eget felis eget nunc lobortis mattis. Eu tincidunt tortor aliquam nulla facilisi cras. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Mi in nulla posuere sollicitudin. Nulla facilisi morbi tempus iaculis urna id volutpat. Vitae nunc sed velit dignissim sodales ut. Elementum nisi quis eleifend quam adipiscing vitae proin. Tellus in metus vulputate eu scelerisque felis. Leo in vitae turpis massa sed elementum tempus egestas. Tristique sollicitudin nibh sit amet.</p>

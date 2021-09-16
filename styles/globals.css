@@ -99,6 +99,8 @@ a {
   width: fit-content;
   height: fit-content;
   padding: 1%;
+  display: flex;
+  align-items: center;
 }
 
 /* Profile Info */
