@@ -55,6 +55,7 @@ a {
   color: var(--thepurple);
   cursor: pointer;
   text-align: center;
+  transition: ease-in-out .5s;
 }
 .links .btn:hover {
   color: white;
@@ -135,6 +136,11 @@ a {
   border-radius: 4px;
 }
 
+/* Danger zone */
+.dangerzone{
+  color: red;
+  cursor: pointer;
+}
 
 
 

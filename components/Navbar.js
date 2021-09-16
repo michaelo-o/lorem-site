@@ -12,7 +12,7 @@ export default function Navbar() {
   const outside = useRef()
 
   const [openProfile, setOpenProfile] = useState(false);
-
+  const [dangerzone, setdangerzone] = useState(false)
 
   const handleClick = event => {
     if (outside.current.contains(event.target)) {  //.current is a method that useRef uses
@@ -35,7 +35,9 @@ export default function Navbar() {
   function profile() {
     setOpenProfile(!openProfile)
   }
-
+  function danger() {
+    setdangerzone(!dangerzone)
+  }
   function closeProfile() {
     setOpenProfile(false)
   }
@@ -73,6 +75,15 @@ export default function Navbar() {
                     <p>Email: {user.email}</p>
                     <p>Date Created: {user.created_at}</p>
                     <p onClick={logout} className="btn">Log Out</p>
+
+                    <h2 onClick={danger} className="dangerzone">DANGER ZONE!</h2>
+                    {
+                      dangerzone ? (
+                        <div className="dangerzone">
+                          <h2>Delete Account Button Will be Here</h2>
+                        </div>
+                      ) : null
+                    }
                   </div>
                 </div>
 
