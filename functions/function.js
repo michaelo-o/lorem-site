@@ -1,3 +1,6 @@
+//netlify functions
+
+
 exports.handler = async (event, context) => {
     console.log('function ran')
 
