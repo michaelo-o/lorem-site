@@ -3,7 +3,7 @@ import Head from 'next/dist/next-server/lib/head'
 import DummyComp from '../components/DummyComp'
 import { useEffect } from 'react'
 
-export default function Guides() {
+export default function Lorems() {
 
   useEffect(() => {
     fetch('/.netlify/functions/function')

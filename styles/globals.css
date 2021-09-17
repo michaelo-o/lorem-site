@@ -129,6 +129,11 @@ a {
   color: var(--thepurple) !important;
   cursor: pointer;
 }
+.profileName:hover{
+  text-shadow: -3px 1px 24px var(--thepurple) !important;
+  cursor: pointer;
+}
+
 .backbutton {
   cursor: pointer;
   padding: 6px 12px;

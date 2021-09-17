@@ -7,7 +7,7 @@ import Head from 'next/head'
 
 export default function Navbar() {
   const { user, login, logout, authReady } = useContext(AuthContext) //context from the autthContext file
-  console.log(user)
+  // console.log(user)
 
   const outside = useRef()
 
