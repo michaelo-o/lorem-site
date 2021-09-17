@@ -1,3 +1,11 @@
+/* base styles */
+.root {
+  --thepurple: rgb(188, 167, 253);
+  --thebrown: #1d0d0d;
+  /* CSS VARIABLES */
+}
+
+
 .home {
   max-width: 1080px;
   margin: 40px auto;
@@ -5,7 +13,7 @@
   line-height: 1.6em;
 }
 .headers{
-  color: rgb(188, 167, 253);
+  color: var(--thepurple);
 }
 .welcome{
   text-align: center;
