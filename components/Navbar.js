@@ -76,14 +76,14 @@ export default function Navbar() {
                     <p>Date Created: {user.created_at}</p>
                     <p onClick={logout} className="btn">Log Out</p>
 
-                    <h2 onClick={danger} className="dangerzone">DANGER ZONE!</h2>
-                    {
+                    {/* <h2 onClick={danger} className="dangerzone">DANGER ZONE!</h2> */}
+                    {/* {
                       dangerzone ? (
                         <div className="dangerzone">
                           <h2>Delete Account Button Will be Here</h2>
                         </div>
                       ) : null
-                    }
+                    } */}
                   </div>
                 </div>
 

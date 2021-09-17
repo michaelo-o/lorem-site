@@ -1,9 +1,11 @@
 import styles from '../styles/Lorems.module.css'
 import Head from 'next/dist/next-server/lib/head'
-import DummyComp from '../components/DummyComp'
 import { useEffect, useContext, useState } from 'react'
 import AuthContext from '../stores/authContext'
 import BuyCoffee from '../components/BuyCoffee'
+import LoremsList from '../components/LoremsList'
+
+
 
 export default function Lorems() {
 
@@ -57,14 +59,8 @@ export default function Lorems() {
 
         {/* Latstly, if we are logged in and there is no error, show the data */}
         {lorems && <BuyCoffee />}
-        {lorems && lorems.map(lorem => (
-          <div key={lorem.id} className={styles.card}>
-            <h3>{lorem.lorem_name}</h3>
-            <p>{lorem.lorem_body}</p>
-          </div>
-        ))}
+        {lorems && <LoremsList />}
       </div>
-
     </>
   )
 }
